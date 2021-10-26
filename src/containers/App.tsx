@@ -10,15 +10,15 @@ function App() {
         <div className="App">
             <Router>
                 <div>
-                    <nav>
-                        <ul>
-                            <li>
+                    <nav className="m-8">
+                        <ul className="flex justify-center">
+                            <li className="mx-8">
                                 <Link to="/">Home</Link>
                             </li>
-                            <li>
+                            <li className="mx-8">
                                 <Link to="/project">Project</Link>
                             </li>
-                            <li>
+                            <li className="mx-8">
                                 <Link to="/roadmap">Roadmap</Link>
                             </li>
                         </ul>
