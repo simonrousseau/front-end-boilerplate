@@ -1,5 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+    BrowserRouter as Router,
+    Route,
+    BrowserRouter,
+    Routes,
+} from 'react-router-dom';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Home from './Home';
@@ -10,24 +15,18 @@ import './App.css';
 function App() {
     return (
         <div className="App">
-            <Router>
+            <BrowserRouter>
                 <div className="flex flex-col h-screen justify-between">
                     <Navigation />
 
-                    <Switch>
-                        <Route path="/project">
-                            <Project />
-                        </Route>
-                        <Route path="/roadmap">
-                            <Roadmap />
-                        </Route>
-                        <Route path="/">
-                            <Home />
-                        </Route>
-                    </Switch>
+                    <Routes>
+                        <Route path="/project" element={<Project />} />
+                        <Route path="/roadmap" element={<Roadmap />} />
+                        <Route path="/" element={<Home />} />
+                    </Routes>
                     <Footer />
                 </div>
-            </Router>
+            </BrowserRouter>
         </div>
     );
 }
